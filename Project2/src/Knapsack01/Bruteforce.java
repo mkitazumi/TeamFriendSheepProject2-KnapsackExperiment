@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Bruteforce {
 
-    public int bruteforce(int capacity, int[] weight, int[] value){
+    public int bruteforce(int title, int capacity, int[] weight, int[] value){
         int totalVal = 0;
 
         ArrayList<Integer> itemSelected = new ArrayList<>();
@@ -35,7 +35,7 @@ public class Bruteforce {
             capacityLeft -= weight[indexMax];
 
         }
-
+        System.out.println("Result of " + title);
         System.out.println("Selected items: " + itemSelected);
         return totalVal;
     }

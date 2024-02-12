@@ -46,6 +46,7 @@ public class knapsack {
         for(int v : value){
             System.out.print(v + " | ");
         }
+        System.out.println("\n-----------------");
 
     }
 
