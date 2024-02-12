@@ -47,7 +47,25 @@ public class knapsack {
             System.out.print(v + " | ");
         }
 
+    }
 
+    public int getTitle(){
+        return  this.title;
+    }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int[] getWeight() {
+        return weight;
+    }
+
+    public int[] getValue() {
+        return value;
+    }
+
+    public int[] getOriginal() {
+        return original;
     }
 }
