@@ -8,12 +8,12 @@ import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
-        Bruteforce test = new Bruteforce();
-        int title = -1;
+        Greedy test = new Greedy();
+        int title = 0;
         int capacity = 9;
         int[] weight = {3, 2, 6, 4, 1};
         int[] value = {16, 17, 19, 22, 11};
-        int total = test.bruteforce(title,capacity, weight, value);
+        int total = test.run(title,capacity, weight, value);
         System.out.println(total);
         Reader read = new Reader();
         int[] input1 = read.load(new File("Project2/src/InputFiles/inputs.csv"));
@@ -31,7 +31,7 @@ public class Main {
         knap3.load(input3);
         knap3.display();
 
-        int resultInput2 = test.bruteforce(knap2.getTitle(),knap2.getCapacity(), knap2.getWeight(), knap2.getValue());
+        int resultInput2 = test.run(knap2.getTitle(),knap2.getCapacity(), knap2.getWeight(), knap2.getValue());
         System.out.println("Total profit is " + resultInput2);
     }
 }
