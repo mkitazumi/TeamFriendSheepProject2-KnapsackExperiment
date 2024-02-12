@@ -33,6 +33,7 @@ public class Bruteforce {
             // Actual item index = index + 1
             itemSelected.add(indexMax + 1);
             capacityLeft -= weight[indexMax];
+
         }
 
         System.out.println("Selected items: " + itemSelected);
