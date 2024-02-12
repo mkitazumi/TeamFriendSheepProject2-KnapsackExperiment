@@ -1,6 +1,6 @@
 # Comparing Knapsacks Experiment
 
-Purpose: To practice and demonstrate proficiency in creating brute force, greedy and dynamic programming algorithms for the fractional knapsack problem and the 01 Knapsack problem.
+Purpose: To practice and demonstrate proficiency in creating brute force, greedy and dynamic programming algorithms for the fractional General.knapsack problem and the 01 Knapsack problem.
 
 Skills Used: Java programming
 
@@ -80,7 +80,7 @@ Part 2: Output printed to files that will be used to create charts OR separate C
 If you output the files to CSV, you can do it in a way so that you can open the CSV files, convert them XLSX files and create your charts directly from what you printed. If you want to print out your values and manipulate their locations to create charts that's fine too.
 Use of junit tests is optional but encouraged as well.
 Because you will be using charts in this project, some of your output will be in charts. You will either need to do your research around how to create charts in Java or output to CSV files and create charts separately.
-Be aware, at some point, the runtime for the Brute Force algorithm may become very long. If you find it will not finish for a threshold of number of items in the knapsack, record this in your report and discuss why. If you cannot produce values for these high knapsack numbers, they will not be expected in your charts. I would suggest waiting at least 5 minutes before considering giving up but it may even take longer.
+Be aware, at some point, the runtime for the Brute Force algorithm may become very long. If you find it will not finish for a threshold of number of items in the General.knapsack, record this in your report and discuss why. If you cannot produce values for these high General.knapsack numbers, they will not be expected in your charts. I would suggest waiting at least 5 minutes before considering giving up but it may even take longer.
 
 
 
