@@ -20,13 +20,13 @@ public class knapsack {
 
 // Initializing arrays
         original = new int[input.length];
-        weight = new int[midpoint - startIndex];
-        value = new int[endIndex - midpoint];
+        value = new int[midpoint - startIndex];
+        weight = new int[endIndex - midpoint];
 
 // Copying values from input to the respective arrays
         System.arraycopy(input, 0, original, 0, input.length);
-        System.arraycopy(input, startIndex, weight, 0, midpoint - startIndex);
-        System.arraycopy(input, midpoint, value, 0, endIndex - midpoint);
+        System.arraycopy(input, startIndex, value, 0, midpoint - startIndex);
+        System.arraycopy(input, midpoint, weight, 0, endIndex - midpoint);
     }
 
     // Load with 3 arguments
