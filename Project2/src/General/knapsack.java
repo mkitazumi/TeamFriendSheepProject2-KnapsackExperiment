@@ -7,13 +7,8 @@ public class knapsack {
     private int[] value;
     private int[] original;
 
-    public void load(int title, int capacity, int[] weight, int[] value){
-        this.title = title;
-        this.capacity = capacity;
-        this.weight = weight;
-        this.value = value;
-    }
 
+    // Load with 1 argument
     public void load(int[] input){
         title = input[0];
         capacity = input[1];
@@ -34,8 +29,26 @@ public class knapsack {
         System.arraycopy(input, midpoint, value, 0, endIndex - midpoint);
     }
 
+    // Load with 3 arguments
+    public void load(int capacity, int[] weight, int[] value){
+        this.capacity = capacity;
+        this.weight = weight;
+        this.value = value;
+    }
+
+    // Load with 4 arguments
+    public void load(int title, int capacity, int[] weight, int[] value){
+        this.title = title;
+        this.capacity = capacity;
+        this.weight = weight;
+        this.value = value;
+    }
+
+
+
+
     public void display(){
-        System.out.println("-----------------");
+        System.out.println("-----------------------------------------------------------------------------------");
         System.out.println("Title: " + title);
         System.out.println("Capacity: " + capacity);
         System.out.println("Weight: ");
@@ -46,7 +59,7 @@ public class knapsack {
         for(int v : value){
             System.out.print(v + " | ");
         }
-        System.out.println("\n-----------------");
+        System.out.println("\n-----------------------------------------------------------------------------------");
 
     }
 

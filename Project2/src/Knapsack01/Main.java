@@ -8,30 +8,34 @@ import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
-        Greedy test = new Greedy();
-        int title = 0;
-        int capacity = 9;
-        int[] weight = {3, 2, 6, 4, 1};
-        int[] value = {16, 17, 19, 22, 11};
-        int total = test.run(title,capacity, weight, value);
-        System.out.println(total);
+        //Reader
         Reader read = new Reader();
-        int[] input1 = read.load(new File("Project2/src/InputFiles/inputs.csv"));
-        knapsack knap = new knapsack();
-        knap.load(input1);
-        knap.display();
+        // Method Greedy Knapsack 0/1
+        Greedy greedy = new Greedy();
 
-        int[] input2 = read.load(new File("Project2/src/InputFiles/inputs2.csv"));
-        knapsack knap2 = new knapsack();
-        knap2.load(input2);
-        knap2.display();
+//        int[] input1 = read.load(new File("Project2/src/InputFiles/inputs.csv"));
+//        knapsack knap = new knapsack();
+//        knap.load(input1);
+//        knap.display();
+//
+//        int[] input2 = read.load(new File("Project2/src/InputFiles/inputs2.csv"));
+//        knapsack knap2 = new knapsack();
+//        knap2.load(input2);
+//        knap2.display();
 
+        // load data from CSV into new array
         int[] input3 = read.load(new File("Project2/src/InputFiles/inputs3.csv"));
+        // Initialize object Knapsack
         knapsack knap3 = new knapsack();
+        // load data from array into knapsack
         knap3.load(input3);
+        // display knapsack
         knap3.display();
+        // Initialize variable to store result
+        // run function with name.run(knapsack)
+        int result3 = greedy.run(knap3);
+        // print out result
+        System.out.println(result3);
 
-        int resultInput2 = test.run(knap2.getTitle(),knap2.getCapacity(), knap2.getWeight(), knap2.getValue());
-        System.out.println("Total profit is " + resultInput2);
     }
 }
