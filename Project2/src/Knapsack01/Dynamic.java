@@ -3,40 +3,52 @@ package Knapsack01;
 import java.util.*;
 
 public class Dynamic {
-    public void knapsackDyProg(int W[], int V[], int M, int n) {
-        int B[][] = new int[n + 1][M + 1];
+
+    /**
+     *
+     * @param weight Array of the weights that will go into the 'knapsack'
+     * @param value Array of the values that will go into the 'knapsack'
+     * @param capacity The capacity of the knapsack
+     * @param n The number of elements of the items that will be considered for the knapsack
+     */
+    public static int knapsackDyProg(int weight[], int value[], int capacity, int n) {
+        int B[][] = new int[n + 1][capacity + 1];
 
         for (int i=0; i<=n; i++)
-            for (int j=0; j<=M; j++) {
+            for (int j=0; j<=capacity; j++) {
                 B[i][j] = 0;
             }
 
         for (int i = 1; i <= n; i++) {
-            for (int j = 0; j <= M; j++) {
+            for (int j = 0; j <= capacity; j++) {
                 B[i][j] = B[i - 1][j];
 
-                if ((j >= W[i-1]) && (B[i][j] < B[i - 1][j - W[i - 1]] + V[i - 1])) {
-                    B[i][j] = B[i - 1][j - W[i - 1]] + V[i - 1];
+                if ((j >= weight[i-1]) && (B[i][j] < B[i - 1][j - weight[i - 1]] + value[i - 1])) {
+                    B[i][j] = B[i - 1][j - weight[i - 1]] + value[i - 1];
                 }
 
-                System.out.print(B[i][j] + " ");
+//                System.out.print(B[i][j] + " ");
             }
-            System.out.print("\n");
+//            System.out.print("\n");
         }
 
-        System.out.println("Max Value:\t" + B[n][M]);
+        System.out.println("Knapsack Value:\t" + B[n][capacity]);
+        int result = B[n][capacity];
+
 
         System.out.println("Selected Packs: ");
 
         while (n != 0) {
-            if (B[n][M] != B[n - 1][M]) {
-                System.out.println("\tPackage " + n + " with W = " + W[n - 1] + " and Value = " + V[n - 1]);
+            if (B[n][capacity] != B[n - 1][capacity]) {
+                System.out.println("\tPackage " + n + " with weight = " + weight[n - 1] + " and Value = " + value[n - 1]);
 
-                M = M - W[n-1];
+                capacity = capacity - weight[n-1];
             }
 
             n--;
+
         }
+        return result;
     }
 
     public static void main(String[] args) {
